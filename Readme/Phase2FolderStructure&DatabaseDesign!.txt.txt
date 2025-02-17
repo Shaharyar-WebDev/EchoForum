@@ -1,0 +1,52 @@
+📌 Phase 2: Folder Structure & Database Design
+Mission Objective: Implement a scalable architecture and fully normalized database.
+
+✅ Folder Structure (MVC Architecture)
+A well-organized project prevents technical debt and keeps logic separate from UI.
+
+bash
+Copy
+Edit
+/EchoForum
+├── /app
+│   ├── /controllers       # Handles business logic
+│   ├── /models            # Database interactions
+│   ├── /views             # HTML templates
+│   ├── /helpers           # Utility functions (Validation, Security)
+│   ├── /middlewares       # Authentication & CSRF protection
+│   ├── /routes            # API & Web routes
+├── /public
+│   ├── /css               # Stylesheets
+│   ├── /js                # Frontend JavaScript
+│   ├── /uploads           # User profile pictures, attachments
+│   ├── index.php          # Entry point
+├── /config
+│   ├── database.php       # DB connection
+│   ├── config.php         # App-wide settings
+│   ├── .env               # Environment variables
+├── /tests                 # Unit & Integration Tests
+├── /logs                  # Debugging logs
+├── /vendor                # Composer dependencies
+├── .gitignore             # Ignore sensitive files
+├── README.md              # Documentation
+✅ Why This Structure?
+
+Follows MVC for clean separation of concerns.
+Security-focused: Middleware handles authentication & protection.
+Scalability-ready: Organized for future expansions.
+✅ Database Schema (Fully Normalized)
+Each table is optimized for relational integrity and performance.
+
+🗃 Key Tables
+Table	Purpose
+users	Stores user details & roles
+categories	Organizes discussions
+threads	Stores user-created discussion topics
+replies	Stores comments on threads
+likes	Manages upvotes/downvotes on posts
+notifications	Tracks user mentions & interactions
+✅ Best Practices Applied:
+
+Foreign Keys for relational integrity.
+Indexes on frequently queried fields.
+Prepared Statements to prevent SQL injection.
